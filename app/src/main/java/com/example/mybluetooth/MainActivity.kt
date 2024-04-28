@@ -234,29 +234,6 @@ class MainActivity : AppCompatActivity() {
 
     private val receiver = object : BroadcastReceiver() {
         override fun onReceive(context: Context, intent: Intent) {
-            /*
-            when (resolution.status.statusCode) {
-                ConnectionsStatusCodes.STATUS_OK -> {
-                    Log.d(TAG, "ConnectionsStatusCodes.STATUS_OK")
-
-                    connectionsClient.stopAdvertising()
-                    connectionsClient.stopDiscovery()
-                    opponentEndpointId = endpointId
-                    Log.d(TAG, "opponentEndpointId: $opponentEndpointId")
-                    newGame()
-                    TicTacToeRouter.navigateTo(Screen.Game)
-                }
-                ConnectionsStatusCodes.STATUS_CONNECTION_REJECTED -> {
-                    Log.d(TAG, "ConnectionsStatusCodes.STATUS_CONNECTION_REJECTED")
-                }
-                ConnectionsStatusCodes.STATUS_ERROR -> {
-                    Log.d(TAG, "ConnectionsStatusCodes.STATUS_ERROR")
-                }
-                else -> {
-                    Log.d(TAG, "Unknown status code ${resolution.status.statusCode}")
-                }
-            }
-            */
             when (intent.action) {
                 BluetoothDevice.ACTION_FOUND -> {
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
